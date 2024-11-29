@@ -1,48 +1,67 @@
--- Insert data into Users table
-INSERT INTO Users (Name, Email, Password, Role) VALUES
-('Alice Johnson', 'alice.johnson@example.com', 'password123', 'User'),
-('Bob Smith', 'bob.smith@example.com', 'securepass', 'User'),
-('Charlie Brown', 'charlie.brown@example.com', 'mypassword', 'User'),
-('Diana Prince', 'diana.prince@example.com', 'amazonpass', 'Admin'),
-('Edward Clark', 'edward.clark@example.com', 'qwerty123', 'User');
+INSERT INTO Users (Name, Email, Password, Role, CreatedAt) VALUES 
+('John Doe', 'johndoe1@example.com', 'password123', 'User', '2024-01-01 10:00:00'),
+('Jane Smith', 'janesmith@example.com', 'password123', 'Admin', '2024-02-01 11:00:00'),
+('Alice Johnson', 'alicej@example.com', 'password123', 'User', '2024-03-01 12:00:00'),
+('Bob Brown', 'bobbrown@example.com', 'password123', 'Admin', '2024-04-01 13:00:00'),
+('Charlie Green', 'charlieg@example.com', 'password123', 'User', '2024-05-01 14:00:00'),
+('Diana White', 'dianaw@example.com', 'password123', 'User', '2024-06-01 15:00:00'),
+('Eve Black', 'eveb@example.com', 'password123', 'Admin', '2024-07-01 16:00:00'),
+('Frank Blue', 'frankb@example.com', 'password123', 'User', '2024-08-01 17:00:00'),
+('Grace Red', 'gracer@example.com', 'password123', 'User', '2024-09-01 18:00:00'),
+('Harry Yellow', 'harryy@example.com', 'password123', 'Admin', '2024-10-01 19:00:00'),
+('Ivy Purple', 'ivyp@example.com', 'password123', 'User', '2024-11-01 20:00:00'),
+('Jack Gray', 'jackg@example.com', 'password123', 'Admin', '2024-12-01 21:00:00');
 
--- Insert data into Categories table
 INSERT INTO Categories (Name, ParentID) VALUES
 ('Electronics', NULL),
+('Home Appliances', NULL),
+('Furniture', NULL),
 ('Clothing', NULL),
-('Mobile Phones', 1),
-('Laptops', 1),
-('Men', 2),
-('Women', 2),
-('T-Shirts', 5),
-('Dresses', 6);
+('Toys', NULL),
+('Books', NULL),
+('Sports', NULL),
+('Beauty', NULL),
+('Food & Beverages', NULL),
+('Health', NULL);
 
--- Insert data into Products table
-INSERT INTO Products (Name, Description, Price, Stock, CategoryID) VALUES
-('iPhone 14', 'Latest Apple smartphone', 999.99, 50, 3),
-('Samsung Galaxy S22', 'Flagship Samsung smartphone', 799.99, 40, 3),
-('MacBook Air', 'Apple laptop with M1 chip', 1199.99, 30, 4),
-('Gaming Laptop', 'High-performance gaming laptop', 1499.99, 20, 4),
-('Men\'s Cotton T-Shirt', 'Comfortable cotton t-shirt', 19.99, 100, 7),
-('Women\'s Summer Dress', 'Light and breezy dress', 49.99, 80, 8),
-('Wireless Earbuds', 'High-quality audio experience', 129.99, 60, 1),
-('Smartwatch', 'Fitness and lifestyle tracking', 199.99, 35, 1);
+INSERT INTO Products (Name, Description, Price, Stock, CategoryID, CreatedAt) VALUES 
+('Smartphone', 'Latest model smartphone', 699.99, 100, 1, '2024-01-01 10:00:00'),
+('Laptop', 'High-performance laptop', 1299.99, 50, 1, '2024-02-01 11:00:00'),
+('Air Conditioner', 'Energy-efficient AC unit', 399.99, 30, 2, '2024-03-01 12:00:00'),
+('Sofa', 'Comfortable 3-seater sofa', 499.99, 20, 3, '2024-04-01 13:00:00'),
+('T-shirt', 'Cotton T-shirt', 19.99, 200, 4, '2024-05-01 14:00:00'),
+('Toy Car', 'Remote-controlled toy car', 29.99, 150, 5, '2024-06-01 15:00:00'),
+('Novel', 'Bestselling novel', 15.99, 300, 6, '2024-07-01 16:00:00'),
+('Soccer Ball', 'Size 5 soccer ball', 29.99, 50, 7, '2024-08-01 17:00:00'),
+('Lipstick', 'Long-lasting lipstick', 12.99, 100, 8, '2024-09-01 18:00:00'),
+('Coffee', 'Premium ground coffee', 9.99, 200, 9, '2024-10-01 19:00:00'),
+('Vitamins', 'Daily vitamin supplements', 19.99, 100, 10, '2024-11-01 20:00:00'),
+('Face Cream', 'Anti-aging face cream', 24.99, 50, 8, '2024-12-01 21:00:00');
 
--- Insert data into Orders table
-INSERT INTO Orders (UserID, Status, TotalPrice) VALUES
-(1, 'Pending', 1019.98),
-(2, 'Shipped', 849.98),
-(3, 'Delivered', 1569.98),
-(1, 'Delivered', 29.99),
-(4, 'Pending', 1349.98);
+INSERT INTO Orders (UserID, Status, TotalPrice, CreatedAt) VALUES 
+(1, 'Shipped', 199.99, '2024-01-01 10:00:00'),
+(2, 'Delivered', 1299.99, '2024-02-01 11:00:00'),
+(3, 'Pending', 399.99, '2024-03-01 12:00:00'),
+(4, 'Shipped', 499.99, '2024-04-01 13:00:00'),
+(5, 'Delivered', 39.99, '2024-05-01 14:00:00'),
+(6, 'Pending', 29.99, '2024-06-01 15:00:00'),
+(7, 'Shipped', 15.99, '2024-07-01 16:00:00'),
+(8, 'Delivered', 29.99, '2024-08-01 17:00:00'),
+(9, 'Pending', 12.99, '2024-09-01 18:00:00'),
+(10, 'Shipped', 9.99, '2024-10-01 19:00:00'),
+(11, 'Delivered', 24.99, '2024-11-01 20:00:00'),
+(12, 'Pending', 19.99, '2024-12-01 21:00:00');
 
--- Insert data into OrderDetails table
-INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price) VALUES
-(1, 1, 1, 999.99),
-(1, 7, 1, 19.99),
-(2, 2, 1, 799.99),
-(2, 7, 1, 49.99),
-(3, 3, 1, 1199.99),
-(3, 8, 1, 199.99),
-(4, 5, 1, 19.99),
-(5, 4, 1, 1499.99);
+INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price) VALUES 
+(1, 1, 1, 199.99),
+(2, 2, 1, 1299.99),
+(3, 3, 1, 399.99),
+(4, 4, 1, 499.99),
+(5, 5, 2, 19.99),
+(6, 6, 1, 29.99),
+(7, 7, 1, 15.99),
+(8, 8, 1, 29.99),
+(9, 9, 1, 12.99),
+(10, 10, 1, 9.99),
+(11, 11, 1, 24.99),
+(12, 12, 1, 19.99);
