@@ -39,6 +39,8 @@
 
 <!-- ABOUT THE PROJECT -->
 # Installation
+## Le moyen le plus simple
+Importez ce fichier dans votre base de données <b><i>e_commerce_sout_final.sql</i></b>.
 ## Étape 1
 
 
