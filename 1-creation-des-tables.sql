@@ -2,7 +2,7 @@ CREATE TABLE Users (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255) NOT NULL,
     Email VARCHAR(255) UNIQUE NOT NULL,
-    Password VARCHAR(255) NOT NULL,
+    Password CHAR(60) NOT NULL, -- For bcrypt hashes
     Role ENUM('Admin', 'User') NOT NULL DEFAULT 'User',
     CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

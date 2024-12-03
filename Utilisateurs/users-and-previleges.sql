@@ -1,5 +1,9 @@
 -- Admin user
+
 CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'admin_password';
+
+CREATE USER 'regular_user'@'localhost' IDENTIFIED BY 'user_password';
+
 GRANT ALL PRIVILEGES ON e_commerce_sout_final.* TO 'admin_user'@'localhost';
 FLUSH PRIVILEGES;
 -- Utilisateur (normal)

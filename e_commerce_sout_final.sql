@@ -404,7 +404,7 @@ CREATE TABLE `users` (
   `ID` int(11) NOT NULL,
   `Name` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
+  `Password` CHAR(60) NOT NULL,
   `Role` enum('Admin','User') NOT NULL DEFAULT 'User',
   `CreatedAt` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -414,18 +414,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Name`, `Email`, `Password`, `Role`, `CreatedAt`) VALUES
-(1, 'John Doe', 'johndoe1@example.com', 'password123', 'User', '2024-01-01 09:00:00'),
-(2, 'Jane Smith', 'janesmith@example.com', 'password123', 'Admin', '2024-02-01 10:00:00'),
-(3, 'Alice Johnson', 'alicej@example.com', 'password123', 'User', '2024-03-01 11:00:00'),
-(4, 'Bob Brown', 'bobbrown@example.com', 'password123', 'Admin', '2024-04-01 13:00:00'),
-(5, 'Charlie Green', 'charlieg@example.com', 'password123', 'User', '2024-05-01 13:00:00'),
-(6, 'Diana White', 'dianaw@example.com', 'password123', 'User', '2024-06-01 14:00:00'),
-(7, 'Eve Black', 'eveb@example.com', 'password123', 'Admin', '2024-07-01 15:00:00'),
-(8, 'Frank Blue', 'frankb@example.com', 'password123', 'User', '2024-08-01 16:00:00'),
-(9, 'Grace Red', 'gracer@example.com', 'password123', 'User', '2024-09-01 17:00:00'),
-(10, 'Harry Yellow', 'harryy@example.com', 'password123', 'Admin', '2024-10-01 18:00:00'),
-(11, 'Ivy Purple', 'ivyp@example.com', 'password123', 'User', '2024-11-01 19:00:00'),
-(12, 'Jack Gray', 'jackg@example.com', 'password123', 'Admin', '2024-12-01 20:00:00');
+(1, 'John Doe', 'johndoe1@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'User', '2024-01-01 09:00:00'),
+(2, 'Jane Smith', 'janesmith@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'Admin', '2024-02-01 10:00:00'),
+(3, 'Alice Johnson', 'alicej@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'User', '2024-03-01 11:00:00'),
+(4, 'Bob Brown', 'bobbrown@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'Admin', '2024-04-01 13:00:00'),
+(5, 'Charlie Green', 'charlieg@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'User', '2024-05-01 13:00:00'),
+(6, 'Diana White', 'dianaw@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'User', '2024-06-01 14:00:00'),
+(7, 'Eve Black', 'eveb@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'Admin', '2024-07-01 15:00:00'),
+(8, 'Frank Blue', 'frankb@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'User', '2024-08-01 16:00:00'),
+(9, 'Grace Red', 'gracer@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'User', '2024-09-01 17:00:00'),
+(10, 'Harry Yellow', 'harryy@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'Admin', '2024-10-01 18:00:00'),
+(11, 'Ivy Purple', 'ivyp@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'User', '2024-11-01 19:00:00'),
+(12, 'Jack Gray', 'jackg@example.com', '$2b$12$9ePjBzSy3MzgHlC5J.FdCO5L6B/3mNkC8.u65yGgTocmyBT/1qUQK', 'Admin', '2024-12-01 20:00:00');
 
 --
 -- Triggers `users`
